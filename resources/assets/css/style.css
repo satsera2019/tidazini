@@ -135,7 +135,8 @@ a:focus {
 .sub_page .hero_area {
     min-height: auto;
     background-color: #178066;
-    /* background-color: #1fab89; */
+    background-color: #ffac2f;
+    background-color: #ffb600;
 }
 
 .sub_page .hero_area .hero_bg_box {
@@ -501,6 +502,8 @@ a:focus {
 
 .doctor_section {
     background: #178066;
+    background: #ffac2f;
+    background: #ffb600;
 }
 
 .doctor_section .heading_container {
@@ -771,6 +774,8 @@ a:focus {
 
 .footer_section {
     background: #178066;
+    background: #ffac2f;
+    background: #ffb600;
     color: #ffffff;
     padding: 60px 0 15px 0;
     position: relative;
