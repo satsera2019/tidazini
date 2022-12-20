@@ -8,9 +8,7 @@
     <section class="contact_section layout_padding">
         <div class="container">
         <div class="heading_container">
-            <h2>
-            Get In Touch
-            </h2>
+            <h2>{{ $t("main.get_in_touch") }}</h2>
         </div>
         <div class="row">
             <div class="col-md-6">

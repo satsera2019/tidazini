@@ -1,0 +1,9 @@
+{
+    "main": {
+        "app_name": "Tidazin",
+        "home": "Home",
+        "about": "about",
+        "contact": "contact",
+        "get_in_touch": "get in touch"
+    }
+}

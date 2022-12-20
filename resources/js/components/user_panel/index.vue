@@ -4,7 +4,7 @@
         
         <div class="hero_bg_box">
             <!-- <img src="../../../assets/images/hero-bg.png" alt=""> -->
-            <img src="https://scontent.ftbs6-2.fna.fbcdn.net/v/t39.30808-6/291806973_478180407642713_4675003296000281737_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_ohc=cAtl9wHXb7sAX9AInvR&tn=JF-bJhhaJ3PjY2Fp&_nc_ht=scontent.ftbs6-2.fna&oh=00_AfANbAreDtlLSGqJdiBr0yZi9iN0DoBemm6Fr_Ho_jbxmQ&oe=63A0C923" alt="">
+            <img src="https://scontent.ftbs5-3.fna.fbcdn.net/v/t39.30808-6/291806973_478180407642713_4675003296000281737_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_ohc=9bb-gCPDZGUAX-CwK5j&tn=JF-bJhhaJ3PjY2Fp&_nc_ht=scontent.ftbs5-3.fna&oh=00_AfDxmFy78eCAa6-In2nE6i788kfb5OsIvAeHFIB9FWutVA&oe=63A6B7E3" alt="">
             
         </div>
         <div class="sub_page fixed-top">

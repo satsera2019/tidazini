@@ -1,0 +1,9 @@
+{
+    "main": {
+        "app_name": "Tidazin",
+        "home": "главный",
+        "about": "о нас",
+        "contact": "контакт",
+        "get_in_touch": "СВЯЗАТЬСЯ"
+    }
+}
