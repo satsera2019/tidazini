@@ -337,6 +337,8 @@
     
     import slider from './layouts/slider.vue'
     import main_Header from './layouts/main_header.vue'
+    import { createI18n } from "vue-i18n";
+
 
     export default{
         components: {

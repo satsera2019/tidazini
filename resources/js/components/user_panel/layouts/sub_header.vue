@@ -46,7 +46,7 @@
             </div>
             
             <select v-model="$i18n.locale" id="locale">
-                    <option v-for="locale in $i18n.availableLocales" :value="locale">{{ locale }}</option>
+              <option v-for="locale in $i18n.availableLocales" :value="locale">{{ locale }}</option>
             </select>
 
           </nav>
