@@ -1,20 +1,4 @@
 <template>
-    
-    <div class="hero_area">
-        
-        <div class="hero_bg_box">
-            <!-- <img src="../../../assets/images/hero-bg.png" alt=""> -->
-            <img src="https://scontent.ftbs5-3.fna.fbcdn.net/v/t39.30808-6/291806973_478180407642713_4675003296000281737_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_ohc=9bb-gCPDZGUAX-CwK5j&tn=JF-bJhhaJ3PjY2Fp&_nc_ht=scontent.ftbs5-3.fna&oh=00_AfDxmFy78eCAa6-In2nE6i788kfb5OsIvAeHFIB9FWutVA&oe=63A6B7E3" alt="">
-            
-        </div>
-        <div class="sub_page fixed-top">
-            <main_Header></main_Header>
-        </div>
-        <slider></slider>
-        
-    </div>
-
-
     <!-- department section -->
     <section class="department_section layout_padding">
         <div class="department_container">
@@ -94,12 +78,11 @@
                         <div class="heading_container">
                             <h2>About <span>Us</span></h2>
                         </div>
-                        <p>
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-                            in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-                            are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-                            the middle of text. All
-                        </p>
+                        <div v-for="translate in about.translate">
+                            <p v-if="( translate.code === $i18n.locale)">
+                                {{ translate.text }}
+                            </p>
+                        </div>
                         <routerLink to="/about">Read More</routerLink>
                     </div>
                 </div>
@@ -333,18 +316,18 @@
     
 </template>
 
+
 <script>
-    
-    import slider from './layouts/slider.vue'
-    import main_Header from './layouts/main_header.vue'
-    import { createI18n } from "vue-i18n";
-
-
     export default{
-        components: {
-            slider,
-            main_Header
-        }
+        data(){
+            return{
+                about: [],
+            }
+        },
+        mounted() {
+            axios
+            .get('/api/about')
+            .then(response => {this.about = response.data});
+        },
     };
-
 </script>

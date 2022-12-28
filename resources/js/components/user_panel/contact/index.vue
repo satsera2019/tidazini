@@ -1,9 +1,4 @@
 <template>
-    
-    <div class="sub_page fixed-top">
-        <sub_Header/>
-    </div>
-
     <!-- contact section -->
     <section class="contact_section layout_padding">
         <div class="container">
@@ -49,14 +44,4 @@
         </div>
     </section>
     <!-- end contact section -->
-
 </template>
-
-<script>
-    import sub_Header from '../layouts/sub_header.vue'
-    export default{
-        components: {
-            sub_Header
-        }
-    };
-</script>

@@ -17,13 +17,25 @@ import messages from "@intlify/unplugin-vue-i18n/messages";
 const i18n = createI18n({
     legacy: false,
     globalInjection: true,
-    locale: "en",
-    fallbackLocale: "en",
+    locale: "ka",
+    fallbackLocale: "ka",
     availableLocales: ["en", "ka", "ru"],
     messages: messages,
 });
 
 import App from './components/app.vue'
 import router from './router';
+
+/* router.beforeEach((to, from, next) => {
+    let language = to.params.lang;
+    if (!language) {
+        language = 'ka';
+    }
+    i18n.locale = language
+    console.log("i18n.locale " + i18n.locale)
+    next()
+}); */
+
+
 
 createApp(App).use(i18n).use(router).mount("#app")

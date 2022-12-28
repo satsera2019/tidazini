@@ -58,8 +58,8 @@
                                     {{ $t("main.about") }}
                                 </a>
                             </routerLink>
-                            <a class="" href="departments.html">Departments</a>
-                            <a class="" href="doctors.html">Doctors</a>
+                            <a class="">Departments</a>
+                            <a class="">Doctors</a>
                             <routerLink to="/contact">
                                 <a class="">
                                     {{ $t("main.contact") }}
@@ -79,9 +79,9 @@
             <div class="footer-info">
                 <p>
                     &copy; <span id="displayYear"></span> All Rights Reserved By
-                    <a href="https://html.design/">Free Html Templates<br><br></a>
+                    <a href="#">Free Html Templates<br><br></a>
                         &copy; <span id="displayYear"></span> Distributed By
-                    <a href="https://themewagon.com/">ThemeWagon</a>
+                    <a href="#">ThemeWagon</a>
                 </p>
             </div>  
         </div>
