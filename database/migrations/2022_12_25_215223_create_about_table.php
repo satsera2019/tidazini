@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('about', function (Blueprint $table) {
             $table->id();
             $table->string('image');
-            $table->integer('text_id');
             $table->integer('creator_user_id');
             $table->timestamps();
             $table->softDeletes();

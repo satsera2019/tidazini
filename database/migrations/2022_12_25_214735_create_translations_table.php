@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('translations', function (Blueprint $table) {
             $table->id();
-            $table->integer('tr_id');
+            $table->string('model_source')->comment('The parent source table');
+            $table->integer('model_id');
             $table->string('code');
-            $table->string('text');
+            $table->text('text');
             $table->timestamps();
             $table->softDeletes();
         });

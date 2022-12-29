@@ -10,7 +10,7 @@ class AboutController extends Controller
 {
     public function index()
     {
-        $about = About::with("translate")->first();
+        $about = About::with("translation")->first();
         return response()->json($about);
     }
 }

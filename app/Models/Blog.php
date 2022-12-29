@@ -10,11 +10,13 @@ class Blog extends Model
 {
     use HasFactory;
 
-    protected $fillable = [ 'image', 'title_id', 'text_id', 'creator_user_id' ];
+    protected $table = 'blogs';
+    protected $fillable = [ 'image', 'creator_user_id' ];
 
 
     public function translation(): HasMany
     {
-        return $this->hasMany(Translation::class, 'tr_id');
+        return $this->hasMany(Translation::class, 'model_id', 'id')->where('model_source', 'blogs');
     }
+
 }

@@ -13,7 +13,7 @@ class About extends Model
     use HasFactory;
 
     protected $table = 'about';
-    protected $fillable = [ 'image', 'text_id', 'creator_user_id' ];
+    protected $fillable = [ 'image', 'creator_user_id' ];
 
     protected static function booted()
     {
@@ -21,9 +21,9 @@ class About extends Model
             $builder->where('deleted_at', null);
         });
     }
-
-    public function translate(): HasMany
+  
+    public function translation(): HasMany
     {
-        return $this->hasMany(Translation::class, 'tr_id');
+        return $this->hasMany(Translation::class, 'model_id', 'id')->where('model_source', 'about');
     }
 }
