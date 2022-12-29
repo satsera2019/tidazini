@@ -10,7 +10,7 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $blogs = Blog::with('translation')->all();
+        $blogs = Blog::with('translation')->get();
         return response()->json($blogs);
     }
 }
