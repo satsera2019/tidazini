@@ -14,13 +14,6 @@ class About extends Model
 
     protected $table = 'about';
     protected $fillable = [ 'image', 'creator_user_id' ];
-
-    protected static function booted()
-    {
-        static::addGlobalScope('deleted_at', function (Builder $builder) {
-            $builder->where('deleted_at', null);
-        });
-    }
   
     public function translation(): HasMany
     {

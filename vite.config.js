@@ -7,7 +7,6 @@ import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
 
 export default defineConfig({
     plugins: [
-        vue(),
         VueI18nPlugin({
             include: resolve(dirname(fileURLToPath(
                 import.meta.url)), './locales/**'),
@@ -16,6 +15,7 @@ export default defineConfig({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
         }),
+        vue(),
     ],
     resolve: {
         alias: {

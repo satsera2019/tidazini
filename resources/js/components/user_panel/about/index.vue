@@ -13,7 +13,7 @@
                         <div class="heading_container">
                             <h2>{{ $t("main.about") }}</h2>
                         </div>
-                        <div v-for="translate in about.translate">
+                        <div v-for="translate in about.translation">
                             <p v-if="( translate.code === $i18n.locale)">
                                 {{ translate.text }}
                             </p>

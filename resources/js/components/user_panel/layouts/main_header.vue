@@ -53,13 +53,29 @@
                             </ul>
                         </div>
 
-                        <select v-model="$i18n.locale" id="locale" >
+                        <!-- <select v-model="$i18n.locale" id="locale" >
                             <option v-for="locale in $i18n.availableLocales" :value="locale">{{ locale }}</option>
-                        </select>
+                        </select> -->
+
+                        <!-- <button @click="SetLocale('en')">EN</button>
+                        <button @click="SetLocale('ka')">ka</button>
+                        <button @click="SetLocale('ru')">ru</button> -->
+
+                        <!-- <ul>
+                            <li v-for="locale in locales" :key="locale" @click="switchLocale(locale)">
+                                {{locale}}
+                            </li>
+                        </ul> -->
+
+                        <LocaleSwitcher />
+
+                        {{  this.$i18n.locale }}
                         
                     </nav>
                 </div>
             </header>
+             
+            
 
             <slider v-if="( $route.name == 'home'  )"></slider>
 
@@ -70,18 +86,28 @@
 
 <script>
     import slider from './slider.vue'
+    import LocaleSwitcher from './localeSwitcher.vue'
+
+    import router from '../../../router/index.js'
+
 
     export default{
         components: {
             slider,
+            LocaleSwitcher 
         },
-        methods:{
-            setLocale(locale)
-            {
-                console.log(locale);
-                this.$i18n.locale = locale
-            }
-        }
+        // methods:{
+        //     SetLocale(locale) {
+        //         console.log(locale);
+        //         this.$i18n.locale = locale;
+        //     },
+            
+        //     changeLocale(locale) {
+        //         if (this.$i18n.locale !== locale) {
+        //             this.$i18n.locale = locale;
+        //         }
+        //     },
+        // }
     }
 
 </script>
