@@ -13,7 +13,7 @@ class AuthController extends Controller
 {
     public function loginForm(): view
     {
-        return (auth()->check()) ? redirect()->route('admin-panel.users.index') : view('admin-panel.auth.login');
+        return (auth()->check()) ? redirect()->route('admin-panel.about') : view('admin-panel.auth.loginForm');
     }
 
     public function login(loginRequest $request): RedirectResponse
@@ -23,5 +23,13 @@ class AuthController extends Controller
             return redirect()->route('admin-panel.users.index');
         }
         return back()->with(['success' => false, 'error' => "Incorrect credentials."]);
+    }
+
+    public function logout(Request $request): RedirectResponse
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('admin-panel.auth.loginForm');
     }
 }

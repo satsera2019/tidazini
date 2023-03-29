@@ -6,7 +6,7 @@
                 <div class="card-header">
                     <h3 class="card-title"></h3>
                 </div>
-                <form class="form-horizontal" action="{{ route('admin-panel.auth.login') }}" method="POST">
+                <form class="form-horizontal" action="{{ route('admin-panel.login') }}" method="POST">
                     @csrf
                     <div class="card-body">
                         <div class="form-group row">

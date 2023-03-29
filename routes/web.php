@@ -28,9 +28,11 @@ Route::get('/', function () {
 
 Route::namespace('AdminPanel')->name('admin-panel.')->prefix('admin-panel')->group(function () {
     Route::get('/', [AuthController::class, 'loginForm'])->name('loginForm');
+    Route::post('/', [AuthController::class, 'login'])->name('login');
+    Route::get('/logout', [MainController::class, 'logout'])->name('logout');
 
-    Route::prefix('auth')->name('auth.')->group(function () {
-        Route::post('/', [AuthController::class, 'login'])->name('login');
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/about', [About::class, 'about'])->name('about');
     });
 });
 
