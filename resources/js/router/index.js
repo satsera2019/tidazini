@@ -30,7 +30,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     let language = to.params.lang;
     let av_locales = ['en', 'ka', 'ru'];
-    console.log("beforeEach language " + language)
+    // console.log("beforeEach language " + language)
 
     if (!av_locales.includes(language)) console.log("!!!");
     if (!language) language = "ka";

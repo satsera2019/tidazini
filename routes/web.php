@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPanel\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/{pathMatch}', function(){
-    return view('welcome');
-})->where('pathMatch', '.*');
+// Route::get('/{pathMatch}', function(){
+//     return view('welcome');
+// })->where('all', '^(?!api).*$')->where('pathMatch', '.*');
+
+
+
+
+
+Route::namespace('AdminPanel')->name('admin-panel.')->prefix('admin-panel')->group(function () {
+    Route::get('/', [AuthController::class, 'loginForm'])->name('loginForm');
+
+    Route::prefix('auth')->name('auth.')->group(function () {
+        Route::post('/', [AuthController::class, 'login'])->name('login');
+    });
+});
+
+Route::get('/{any}', function(){
+})->where('any', '.*');
+
