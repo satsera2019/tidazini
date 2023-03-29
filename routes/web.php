@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPanel\AboutController;
 use App\Http\Controllers\AdminPanel\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,14 +29,14 @@ Route::get('/', function () {
 
 Route::namespace('AdminPanel')->name('admin-panel.')->prefix('admin-panel')->group(function () {
     Route::get('/', [AuthController::class, 'loginForm'])->name('loginForm');
-    Route::post('/', [AuthController::class, 'login'])->name('login');
-    Route::get('/logout', [MainController::class, 'logout'])->name('logout');
+    Route::post('/login', [AuthController::class, 'login'])->name('login');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::middleware(['auth'])->group(function () {
-        Route::get('/about', [About::class, 'about'])->name('about');
+        Route::get('/about', [AboutController::class, 'about'])->name('about');
     });
 });
 
-Route::get('/{any}', function(){
+Route::get('/{any}', function () {
+    return view('welcome');
 })->where('any', '.*');
-
