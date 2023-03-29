@@ -11,16 +11,17 @@ use Illuminate\View\View;
 
 class AuthController extends Controller
 {
-    public function loginForm(): view
+    public function loginForm()
     {
-        return (auth()->check()) ? redirect()->route('admin-panel.about') : view('admin-panel.auth.login');
+        return (auth()->check()) ? redirect()->route('admin-panel.about.index') : view('admin-panel.auth.login');
+        // return view('admin-panel.auth.login');
     }
 
     public function login(loginRequest $request): RedirectResponse
     {
         $result = Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'admin']);
         if ($result) {
-            return redirect()->route('admin-panel.about');
+            return redirect()->route('admin-panel.about.index');
         }
         return back()->with(['success' => false, 'error' => "Incorrect credentials."]);
     }

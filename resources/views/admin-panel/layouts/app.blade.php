@@ -38,27 +38,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
         integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <style>
-        .required:after {
-            content: " *";
-            color: red;
-        }
-    </style>
-
 </head>
 
 <body class="hold-transition sidebar-mini">
     <div class="wraper">
         @if (Auth::check())
             @include('admin-panel.layouts.dashboard')
+
+
             <div class="content-wrapper">
+                <div class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1 class="m-0">@yield('page_title')</h1>
+                            </div>
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active">@yield('page_title')</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="content">
-                    <div class="container">
-                        @yield('content')
+                    <div class="container-fluid">
+                        <div class="row">
+                            @yield('content')
+                        </div>
                     </div>
                 </div>
             </div>
+
+
+
+            {{-- <div class="content-wrapper">
+                <div class="content">
+                    <div class="container-fluid">
+                        @yield('content')
+                    </div>
+                </div>
+            </div> --}}
         @else
             <div class="container">
                 @yield('content')

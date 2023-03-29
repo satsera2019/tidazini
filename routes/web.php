@@ -33,7 +33,10 @@ Route::namespace('AdminPanel')->name('admin-panel.')->prefix('admin-panel')->gro
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::middleware(['auth'])->group(function () {
-        Route::get('/about', [AboutController::class, 'about'])->name('about');
+        Route::prefix('about')->name('about.')->group(function () {
+            Route::get('/index', [AboutController::class, 'index'])->name('index');
+            Route::get('/create', [AboutController::class, 'create'])->name('create');
+        });
     });
 });
 

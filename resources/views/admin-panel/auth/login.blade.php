@@ -1,4 +1,5 @@
 @extends('admin-panel.layouts.app')
+
 @section('content')
     <div class="row justify-content-center">
         <div class="col-6">
